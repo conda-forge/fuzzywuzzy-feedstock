@@ -3,7 +3,7 @@ About fuzzywuzzy
 
 Home: https://github.com/seatgeek/fuzzywuzzy
 
-Package license: MIT
+Package license: GPLv2
 
 Feedstock license: BSD 3-Clause
 
