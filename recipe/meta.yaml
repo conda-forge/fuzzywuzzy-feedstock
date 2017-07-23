@@ -1,21 +1,21 @@
-{%set name = "fuzzywuzzy" %}
-{%set version = "0.15.1" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "3ed1a125d682208aa327516eb56fc69cff76215230efa0792afd1f3cb6975214" %}
-{%set build_num = "0" %}
+{% set name = "fuzzywuzzy" %}
+{% set version = "0.15.1" %}
+{% set bundle = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash = "3ed1a125d682208aa327516eb56fc69cff76215230efa0792afd1f3cb6975214" %}
+{% set build = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  {{ hash_type }}: {{ hash }}
 
 build:
-  number: {{ build_num }}
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -25,7 +25,7 @@ requirements:
 
   run:
     - python
-    - python-levenshtein
+    - python-levenshtein >=0.12
 
 test:
   imports:
