@@ -1,8 +1,8 @@
 {%set name = "fuzzywuzzy" %}
-{%set version = "0.15.0" %}
+{%set version = "0.15.1" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "5b36957ccf836e700f4468324fa80ba208990385392e217be077d5cd738ae602" %}
+{%set hash_val = "3ed1a125d682208aa327516eb56fc69cff76215230efa0792afd1f3cb6975214" %}
 {%set build_num = "0" %}
 
 package:
