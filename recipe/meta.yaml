@@ -1,8 +1,8 @@
 {% set name = "fuzzywuzzy" %}
-{% set version = "0.15.1" %}
+{% set version = "0.16.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "3ed1a125d682208aa327516eb56fc69cff76215230efa0792afd1f3cb6975214" %}
+{% set hash = "d40c22d2744dff84885b30bbfc07fab7875f641d070374331777a4d1808b8d4e" %}
 {% set build = 0 %}
 
 package:
