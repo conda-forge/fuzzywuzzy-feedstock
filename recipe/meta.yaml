@@ -15,16 +15,17 @@ source:
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed --no-cache-dir -vvv .
   noarch: python
+  script: "{{ PYTHON }} -m pip install . -vv"
+  
 
 requirements:
   host:
-    - python
+    - python >=2.7
     - pip
 
   run:
-    - python
+    - python >=2.7
     - python-levenshtein >=0.12
 
 test:
@@ -38,7 +39,7 @@ test:
 
 about:
   home: https://github.com/seatgeek/fuzzywuzzy
-  license: GPLv2
+  license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
   summary: 'Fuzzy string matching in python'
