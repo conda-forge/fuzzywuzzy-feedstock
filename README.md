@@ -3,13 +3,15 @@ About fuzzywuzzy
 
 Home: https://github.com/seatgeek/fuzzywuzzy
 
-Package license: GPLv2
+Package license: GPL-2.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fuzzywuzzy-feedstock/blob/master/LICENSE.txt)
 
 Summary: Fuzzy string matching in python
 
+Development: https://github.com/seatgeek/fuzzywuzzy
 
+Documentation: http://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/
 
 Current build status
 ====================
@@ -116,6 +118,8 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@hadim](https://github.com/hadim/)
 * [@josegonzalez](https://github.com/josegonzalez/)
 * [@pmlandwehr](https://github.com/pmlandwehr/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 
