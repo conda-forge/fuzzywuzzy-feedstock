@@ -1,8 +1,8 @@
 {% set name = "fuzzywuzzy" %}
-{% set version = "0.17.0" %}
+{% set version = "0.18.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "6f49de47db00e1c71d40ad16da42284ac357936fa9b66bea1df63fed07122d62" %}
+{% set hash = "45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8" %}
 
 package:
   name: {{ name }}
@@ -15,16 +15,17 @@ source:
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed --no-cache-dir -vvv .
   noarch: python
+  script: "{{ PYTHON }} -m pip install . -vv"
+  
 
 requirements:
   host:
-    - python
+    - python >=2.7
     - pip
 
   run:
-    - python
+    - python >=2.7
     - python-levenshtein >=0.12
 
 test:
@@ -38,7 +39,7 @@ test:
 
 about:
   home: https://github.com/seatgeek/fuzzywuzzy
-  license: GPLv2
+  license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
   summary: 'Fuzzy string matching in python'
@@ -49,3 +50,5 @@ extra:
   recipe-maintainers:
     - pmlandwehr
     - josegonzalez
+    - synapticarbors
+    - hadim
