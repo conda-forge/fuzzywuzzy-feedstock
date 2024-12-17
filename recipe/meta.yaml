@@ -1,34 +1,34 @@
 {% set name = "fuzzywuzzy" %}
 {% set version = "0.18.0" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
   
 
 requirements:
   host:
-    - python >=2.7
+    - python {{ python_min }}
+    - setuptools
     - pip
 
   run:
-    - python >=2.7
+    - python >={{ python_min }}
     - python-levenshtein >=0.12
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - fuzzywuzzy
     - fuzzywuzzy.StringMatcher
@@ -36,6 +36,8 @@ test:
     - fuzzywuzzy.process
     - fuzzywuzzy.string_processing
     - fuzzywuzzy.utils
+  commands:
+    - pip check
 
 about:
   home: https://github.com/seatgeek/fuzzywuzzy
